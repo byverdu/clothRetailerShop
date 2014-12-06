@@ -20,7 +20,7 @@ server.use(bodyParser.urlencoded({
   extended: true
 }));
 server.use(cookieParser());
-server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, 'app')));
 
 server.use('/', routes);
 
