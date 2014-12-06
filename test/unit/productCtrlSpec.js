@@ -26,7 +26,7 @@ describe('App controllers', function() {
 			expect(scope.products).to.have.length(13);
 		});
 
-		it('has sharedCart with no items', function() {
+		it('has a sharedCart with no items', function() {
 			expect(scope.sharedCart).to.eq(service.sharedCart);
 			expect(scope.sharedCart).to.have.length(0);	
 		});
@@ -40,6 +40,13 @@ describe('App controllers', function() {
 	describe('CartCtrl', function() {
 		
 		var scope, ctrl, service;
+
+		var fakeCloth = {
+			name: 'Almond Toe Court Shoes, Patent Black',
+			category: 'Women’s Footwear',
+			price: '99.00',
+			stock: 5
+		};
 		
 		beforeEach(inject(function($rootScope,$controller,ClothService){
 
@@ -52,9 +59,16 @@ describe('App controllers', function() {
 			expect(ctrl).not.to.be.undefined;
 		});
 
-		it('has sharedCart with no items', function() {
+		it('has a sharedCart with no items', function() {
 			expect(scope.sharedCart).to.eq(service.sharedCart);
 			expect(scope.sharedCart).to.have.length(0);	
+		});
+
+		it('can remove an item from the sharedCart', function() {
+			scope.sharedCart.push(fakeCloth);
+			expect(scope.sharedCart).to.have.length(1);
+			scope.removeItem(0);	
+			expect(scope.sharedCart).to.have.length(0);
 		});
 	});
 });

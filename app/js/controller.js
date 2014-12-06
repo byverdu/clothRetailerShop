@@ -17,4 +17,8 @@ angular.module('shopControllers',[])
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
 
 		$scope.sharedCart = ClothService.sharedCart;
+
+		$scope.removeItem = function($index){
+			ClothService.sharedCart.splice($index,1);
+		};
 	}]);
