@@ -1,3 +1,4 @@
+/*global angular*/
 'use strict';
 
 angular.module('shopControllers',[])
@@ -8,8 +9,14 @@ angular.module('shopControllers',[])
 		$scope.sharedCart = ClothService.sharedCart;
 
 		$scope.addItem = function($index){
-			ClothService.sharedCart.push($scope.products[$index]);
 
+			var thisCloth = $scope.products[$index];
+
+			thisCloth.stock -= 1;
+
+			ClothService.sharedCart.push(thisCloth);
+
+			console.log(thisCloth);
 		};
 
 	}])

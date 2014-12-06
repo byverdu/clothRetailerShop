@@ -3,11 +3,11 @@
 
 describe('App controllers', function() {
 
+	var scope ,ctrl, service;
+
 	beforeEach(module('shopApp'));
 
 	describe('ClothCtrl', function() {
-		
-		var scope, ctrl,service;
 		
 		beforeEach(inject(function($rootScope,$controller,ClothService){
 
@@ -18,7 +18,7 @@ describe('App controllers', function() {
 		}));
 
 		it('is defined', function() {
-			expect(ctrl).not.to.be.undefined;
+			expect(ctrl).not.to.be.undefined();
 		});
 
 		it('contains all the cloth', function() {
@@ -38,8 +38,6 @@ describe('App controllers', function() {
 	});
 
 	describe('CartCtrl', function() {
-		
-		var scope, ctrl, service;
 
 		var fakeCloth = {
 			name: 'Almond Toe Court Shoes, Patent Black',
@@ -56,7 +54,7 @@ describe('App controllers', function() {
 		}));
 
 		it('is defined', function() {
-			expect(ctrl).not.to.be.undefined;
+			expect(ctrl).not.to.be.undefined();
 		});
 
 		it('has a sharedCart with no items', function() {

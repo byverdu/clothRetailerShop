@@ -19,7 +19,7 @@ describe('ClothService', function() {
 	}));
 
 	it('should be defined', function() {
-		expect(service).not.to.be.undefined;
+		expect(service).not.to.be.undefined();
 		expect(service).to.be.an('object');
 	});
 

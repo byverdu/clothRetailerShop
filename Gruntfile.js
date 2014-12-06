@@ -31,7 +31,7 @@ module.exports = function (grunt) {
     sass: {
       dist: {
         files: {
-          'public/css/style.css': 'public/css/style.scss'
+          'app/css/style.css': 'app/css/style.scss'
         }
       }
     },
@@ -47,7 +47,7 @@ module.exports = function (grunt) {
         node: true,
         globals: ['it','describe','after','xit','beforeEach','before']
         },
-        files:['Gruntfile.js','app.js','public/js/*.js','test/*.js','test/**/*.js']
+        files:['Gruntfile.js','app.js','app/js/*.js','test/*.js','test/**/*.js']
     },
 
     // watch tasks
@@ -65,7 +65,7 @@ module.exports = function (grunt) {
         tasks: ['develop', 'delayed-livereload']
       },
       js: {
-        files: ['public/js/*.js','test/**/*.js','Gruntfile.js'],
+        files: ['app/js/*.js','test/**/*.js','Gruntfile.js'],
         tasks: ['jshint','notify'],
         options: {
           livereload: reloadPort
@@ -73,7 +73,7 @@ module.exports = function (grunt) {
       },
       css: {
         files: [
-          'public/css/*.scss'
+          'app/css/*.scss'
         ],
         tasks: ['sass'],
         options: {
