@@ -82,8 +82,6 @@ angular.module('shopServices',[])
 					price: '540.00£',
 					stock: 5
 				}
-
-
 			];
 	});
 
