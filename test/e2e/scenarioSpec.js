@@ -112,7 +112,7 @@ describe('shopApp',function(){
 		});
 
 		it('I can see 15% off the price if I spend more than 75£ and there is one Footwear item', function() {
-			var discounts = element(by.buttonText('10% off!'));
+			var discounts = element(by.buttonText('15% off!'));
 			addButton.click();
 			discounts.click();
 			expect(element(by.css('.priceDisc')).getText()).to.eventually.eq('Price with discounts £ 84.15');

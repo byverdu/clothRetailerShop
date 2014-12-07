@@ -4,17 +4,18 @@ block content
 
 	.container-fluid
 		.row
-			.col-lg-8.col-lg-offset-2(ng-controller='ClothCtrl')
+			.col-md-10.col-sm-9.col-xs-9(ng-controller='ClothCtrl')
 				h1.title Welcome to #{title}
-				section.allCloth
-					div.cloth(ng-repeat='product in products track by $index')
-						h5(ng-bind='product.name') 
-						h6(ng-bind='product.category')
-						p(data-ng-bind='product.price | currency : "£ " : 2')
-						strong(ng-bind='product.stock')
-						button(class='btn btn-xs btn-success',ng-click='addItem($index)') Add Item
-
-			.col-lg-8.col-lg-offset-2(ng-controller='CartCtrl')
+				.row
+					section.allCloth
+						div.col-md-4.col-sm-6.col-xs-12(ng-repeat='product in products track by $index')
+							h5(ng-bind='product.name') 
+							h6(ng-bind='product.category')
+							p(data-ng-bind='product.price | currency : "£ " : 2')
+							strong(ng-bind='product.stock')
+							button(class='btn btn-xs btn-success',ng-click='addItem($index)') Add Item
+		
+			.col-md-2.col-sm-3.col-xs-3(ng-controller='CartCtrl')
 				section.shoppingChart
 					h2.totalPrice(ng-bind='totalPrice() | currency : "£ " : 2')
 
