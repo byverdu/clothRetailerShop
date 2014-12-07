@@ -29,9 +29,8 @@ describe('shopApp',function(){
 		});
 
 		it('should have a section to display the chart', function() {
-			var chart = element(by.css('section.shoppingChart'));
-			expect(chart.isPresent()).to.eventually.be.true;
-			expect(chart.isDisplayed()).to.eventually.be.false;
+			expect(element(by.css('section.shoppingChart')).isPresent()).to.eventually.be.true;
+
 		});
 
 		it('should have a section to display the discounts', function() {

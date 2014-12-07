@@ -16,6 +16,7 @@ block content
 
 			.col-lg-8.col-lg-offset-2(ng-controller='CartCtrl')
 				section.shoppingChart
+					h2(class="totalPrice",ng-bind='totalPrice() | currency : "£ " : 2')
 					div(class="itemChart",ng-repeat='cloth in sharedCart track by $index')
 						h5(ng-bind='cloth.name') 
 						h6(ng-bind='cloth.category')
