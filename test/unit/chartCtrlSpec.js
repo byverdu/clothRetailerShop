@@ -56,21 +56,24 @@ describe('CartCtrl', function() {
 			expect(scope.discounts).to.have.property('fiftyDisc').to.eq(10);
 			expect(scope.discounts).to.have.property('senventyFiveDisc').to.eq(15);
 		});
+
+		it('a discount can be selected', function() {
+			var discounts = scope.discounts;
+			scope.thisDisc= null;
+			scope.selectDisc(discounts.normalDisc);
+
+			expect(scope.thisDisc).to.eq(5);
+		});
+
+		it('the price is reduced by 5% with the normalDisc', function() {
+			scope.sharedCart.push(fakeCloth);
+			var price = (scope.sharedCart[0].price);
+			var disc  = scope.selectDisc(scope.discounts.normalDisc);
+
+			scope.applyDisc();
+
+			expect(scope.applyDisc()).to.eq(price-((disc/100)*100));
+		});
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

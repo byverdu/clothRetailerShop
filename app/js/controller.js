@@ -16,8 +16,6 @@ angular.module('shopControllers',[])
 			thisCloth.stock -= 1;
 
 			ClothService.sharedCart.push(thisCloth);
-
-			console.log(ClothService.sharedCart);
 		};
 
 	}])
@@ -25,6 +23,7 @@ angular.module('shopControllers',[])
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
 
 		$scope.sharedCart = ClothService.sharedCart;
+		$scope.thisDisc   = null;
 		$scope.discounts  = {
 
 			normalDisc: 5,
@@ -47,5 +46,15 @@ angular.module('shopControllers',[])
 			return price;
 		};
 
+		$scope.selectDisc = function(discount){
+			return $scope.thisDisc = discount;
+		};
+
+
+		$scope.applyDisc = function(){
+			var total = $scope.totalPrice();
+
+			return (total-(($scope.thisDisc/100)*100));
+		};
 
 	}]);
