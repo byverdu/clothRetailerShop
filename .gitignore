@@ -1,4 +1,4 @@
 node_modules/
 app/components
 .sass-cache
-test/npm-debug.log
+npm-debug.log
