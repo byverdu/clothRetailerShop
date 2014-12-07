@@ -16,12 +16,21 @@ block content
 
 			.col-lg-8.col-lg-offset-2(ng-controller='CartCtrl')
 				section.shoppingChart
-					h2(class="totalPrice",ng-bind='totalPrice() | currency : "£ " : 2')
+					h2.totalPrice(ng-bind='totalPrice() | currency : "£ " : 2')
+
+					h2.priceDisc(ng-show='isDiscounted') Price with discounts #[strong(ng-bind='priceDisc() | currency : "£ " : 2') ] 
+					
+					section.discounts(ng-show='isDisplayed')
+						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.normalDisc)" ) 5% off!   	
+						
+						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.fiftyDisc)",ng-disabled='fiftyDisc') 10% off!  	
+						
+						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.senventyFiveDisc)",ng-disabled='seventyDisc' ) 15% off!
+
 					div(class="itemChart",ng-repeat='cloth in sharedCart track by $index')
 						h5(ng-bind='cloth.name') 
 						h6(ng-bind='cloth.category')
 						p(data-ng-bind='cloth.price | currency : "£ " : 2')
 						button(class="btn btn-xs btn-warning",ng-click='removeItem($index)') Remove Item
-					section.discounts
 
 

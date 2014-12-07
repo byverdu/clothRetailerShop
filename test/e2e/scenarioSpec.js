@@ -88,6 +88,35 @@ describe('shopApp',function(){
 			addButton.click();
 			expect(element(by.css('.totalPrice')).getText()).to.eventually.eq('£ 99.00');
 		});
+
+		it('I can a apply a voucher to my shoppingChart', function() {
+			var discounts = element(by.css('section.discounts'));
+			
+			expect(discounts.isDisplayed()).to.eventually.be.false;
+			addButton.click();
+			expect(discounts.isDisplayed()).to.eventually.be.true;
+		});
+
+		it('I can see 5% off the price with the normal discount', function() {
+			var discounts = element(by.buttonText('5% off!'));
+			addButton.click();
+			discounts.click();
+			expect(element(by.css('.priceDisc')).getText()).to.eventually.eq('Price with discounts £ 94.05');
+		});
+
+		it('I can see 10% off the price if I spend more than 50£', function() {
+			var discounts = element(by.buttonText('10% off!'));
+			addButton.click();
+			discounts.click();
+			expect(element(by.css('.priceDisc')).getText()).to.eventually.eq('Price with discounts £ 89.10');
+		});
+
+		it('I can see 15% off the price if I spend more than 75£ and there is one Footwear item', function() {
+			var discounts = element(by.buttonText('10% off!'));
+			addButton.click();
+			discounts.click();
+			expect(element(by.css('.priceDisc')).getText()).to.eventually.eq('Price with discounts £ 84.15');
+		});
 	});
 });
 

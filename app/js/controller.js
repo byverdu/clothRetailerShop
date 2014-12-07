@@ -22,9 +22,13 @@ angular.module('shopControllers',[])
 
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
 
-		$scope.sharedCart = ClothService.sharedCart;
-		$scope.thisDisc   = null;
-		$scope.discounts  = {
+		$scope.sharedCart   = ClothService.sharedCart;
+		$scope.thisDisc     = null;
+		$scope.isDisplayed  = false;
+		$scope.isDiscounted = false;
+		$scope.fiftyDisc    = true;
+		$scope.seventyDisc  = true;
+		$scope.discounts    = {
 
 			normalDisc: 5,
 			fiftyDisc: 10,
@@ -43,10 +47,30 @@ angular.module('shopControllers',[])
 				price += cloth.price;
 			});
 
+			if(price > 0){
+				$scope.isDisplayed  = true;
+			} else {
+				$scope.isDisplayed  = false;
+				$scope.isDiscounted = false;
+			}
+
+			if (price > 50) {
+				$scope.fiftyDisc = false;
+			} else{
+				$scope.fiftyDisc = true;
+			}
+
+			if(price > 75 && $scope.checkFootWear()){
+				$scope.seventyDisc  = false;
+			} else{
+				$scope.seventyDisc  = true;
+			}
+
 			return price;
 		};
 
 		$scope.selectDisc = function(discount){
+			$scope.isDiscounted = true;
 			return $scope.thisDisc = discount;
 		};
 
