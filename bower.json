@@ -10,7 +10,6 @@
     "angular": "~1.2.27",
     "angular-mocks": "~1.2.27",
     "angular-resource": "~1.2.27",
-    "angular-bootstrap": "~0.12.0",
-    "normalize-css": "~3.0.2"
+    "angular-bootstrap": "~0.12.0"
   }
 }
