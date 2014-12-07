@@ -1,8 +1,12 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1.title Welcome to #{title}
+
+  section.allCloth
+
+  section.chart
+    section.discounts
 
   script(src="components/angular/angular.min.js")
   script(src="js/app.js")

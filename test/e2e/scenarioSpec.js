@@ -1,4 +1,4 @@
-/*global it,describe,browser,beforeEach,expect*/
+/*global it,describe,browser,beforeEach,expect,by,element*/
 'use strict';
 
 var chai     = require('chai');
@@ -14,6 +14,22 @@ describe('shopApp',function(){
 
 		it('should have a title in the browser tab', function() {
 			expect(browser.getTitle()).to.eventually.eq('ByverduShop');
+		});
+
+		it('should have a welcome message', function() {
+			expect(element(by.css('.title')).getText()).to.eventually.eq('Welcome to ByverduShop');
+		});
+
+		it('should have a section to display the cloth', function() {
+			expect(element(by.css('section.allCloth')).isPresent()).to.eventually.be.true;
+		});
+
+		it('should have a section to display the chart', function() {
+			expect(element(by.css('section.chart')).isPresent()).to.eventually.be.true;
+		});
+
+		it('should have a section to display the discounts', function() {
+			expect(element(by.css('section.discounts')).isPresent()).to.eventually.be.true;
 		});
 
 	});
