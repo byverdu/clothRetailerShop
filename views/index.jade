@@ -4,9 +4,14 @@ block content
 
 	.container-fluid
 		.row
-			.col-lg-8.col-lg-offset-2
+			.col-lg-8.col-lg-offset-2(ng-controller='ClothCtrl')
 				h1.title Welcome to #{title}
-				section.allCloth
+				section.allCloth(ng-repeat='product in products track by $index')
+					div.cloth
+						h5(ng-bind='product.name') 
+						h6(ng-bind='product.category')
+						p(data-ng-bind='product.price | currency : "£ " : 2')
+						strong(ng-bind='product.stock')
 			.col-lg-8.col-lg-offset-2
 				section.chart
 					section.discounts

@@ -36,4 +36,25 @@ describe('shopApp',function(){
 			expect(element(by.css('section.discounts')).isPresent()).to.eventually.be.true;
 		});
 	});
+
+	describe('User Stories', function() {
+
+		var allCloth = element.all(by.repeater('product in products'));
+		var clothName = element(by.repeater('product in products').row(0).column('product.name'));
+		var clothCat = element(by.repeater('product in products').row(0).column('product.category'));
+		var clothPrice = element(by.repeater('product in products').row(0).column('product.price'));
+		var clothStock = element(by.repeater('product in products').row(0).column('product.stock'));
+
+		it('I can view the products and their category, price and their stock', function() {
+			expect(allCloth.count()).to.eventually.eq(13);
+			
+			expect(clothName.getText()).to.eventually.eq('Almond Toe Court Shoes, Patent Black');	
+			
+			expect(clothCat.getText()).to.eventually.eq('Women’s Footwear');
+			
+			expect(clothPrice.getText()).to.eventually.eq('£ 99.00');
+
+			expect(clothStock.getText()).to.eventually.eq('5');	
+		});
+	});
 });
