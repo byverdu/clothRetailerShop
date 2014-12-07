@@ -78,14 +78,16 @@ describe('shopApp',function(){
 			expect(chart.count()).to.eventually.eq(2);
 		});
 
-		it('can remove an item form the shoppingChart', function() {
+		it('I can remove an item form the shoppingChart', function() {
 			addButton.click();
 			expect(chart.count()).to.eventually.eq(1);
 			removeButton.click();
-			expect(chart.count()).to.eventually.eq(0);			
+			expect(chart.count()).to.eventually.eq(0);
+		});
 
-			
-
+		it('I can see the price for my shoppingChart', function() {
+			addButton.click();
+			expect(element(by.css('.totalPrice')).getText()).to.eventually.eq('£ 99.00');
 		});
 	});
 });
