@@ -6,7 +6,7 @@ describe('ClothService', function() {
 	var fakeCloth = {
 		name: 'Almond Toe Court Shoes, Patent Black',
 		category: 'Women’s Footwear',
-		price: '99.00',
+		price: 99.00,
 		stock: 5
 	};
 	
@@ -40,7 +40,7 @@ describe('ClothService', function() {
 	});
 
 	it('and each cloth has a property price', function() {
-		expect(service.cloth[0]).to.have.property('price').to.eq('99.00');
+		expect(service.cloth[0]).to.have.property('price').to.eq(99.00);
 	});
 
 	it('and each cloth has a property stock', function() {

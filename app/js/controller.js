@@ -10,13 +10,14 @@ angular.module('shopControllers',[])
 
 		$scope.addItem = function($index){
 
+
 			var thisCloth = $scope.products[$index];
 
 			thisCloth.stock -= 1;
 
 			ClothService.sharedCart.push(thisCloth);
 
-			console.log(thisCloth);
+			console.log(ClothService.sharedCart);
 		};
 
 	}])
@@ -24,6 +25,17 @@ angular.module('shopControllers',[])
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
 
 		$scope.sharedCart = ClothService.sharedCart;
+
+		$scope.totalPrice = function(){
+
+			var price = 0;
+
+			angular.forEach($scope.sharedCart,function(cloth){
+				price += cloth.price;
+			});
+
+			return price;
+		};
 
 		$scope.removeItem = function($index){
 			ClothService.sharedCart.splice($index,1);
