@@ -4,5 +4,6 @@
 angular.module('shopApp',[
 
 	'shopServices',
-	'shopControllers'
+	'shopControllers',
+	'ui.bootstrap'
 	]);
