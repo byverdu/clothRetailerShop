@@ -1,4 +1,5 @@
 /*global angular*/
+
 'use strict';
 
 angular.module('shopControllers',[])
@@ -9,7 +10,6 @@ angular.module('shopControllers',[])
 		$scope.sharedCart = ClothService.sharedCart;
 
 		$scope.addItem = function($index){
-
 
 			var thisCloth = $scope.products[$index];
 
@@ -25,6 +25,16 @@ angular.module('shopControllers',[])
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
 
 		$scope.sharedCart = ClothService.sharedCart;
+		$scope.discounts  = {
+
+			normalDisc: 5,
+			fiftyDisc: 10,
+			senventyFiveDisc:15
+		};
+
+		$scope.removeItem = function($index){
+			ClothService.sharedCart.splice($index,1);
+		};
 
 		$scope.totalPrice = function(){
 
@@ -37,7 +47,5 @@ angular.module('shopControllers',[])
 			return price;
 		};
 
-		$scope.removeItem = function($index){
-			ClothService.sharedCart.splice($index,1);
-		};
+
 	}]);

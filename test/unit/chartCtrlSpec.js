@@ -50,4 +50,27 @@ describe('CartCtrl', function() {
 			
 			expect(scope.totalPrice()).to.eq(price);
 		});
+
+		it('has 3 possible discounts', function() {
+			expect(scope.discounts).to.have.property('normalDisc').to.eq(5);
+			expect(scope.discounts).to.have.property('fiftyDisc').to.eq(10);
+			expect(scope.discounts).to.have.property('senventyFiveDisc').to.eq(15);
+		});
 	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
