@@ -43,11 +43,16 @@ describe('shopApp',function(){
 
 		var allCloth = element.all(by.repeater('product in products'));
 		var chart    = element.all(by.repeater('cloth in sharedCart'));
+		
 		var clothName = element(by.repeater('product in products').row(0).column('product.name'));
 		var clothCat = element(by.repeater('product in products').row(0).column('product.category'));
 		var clothPrice = element(by.repeater('product in products').row(0).column('product.price'));
 		var clothStock = element(by.repeater('product in products').row(0).column('product.stock'));
-		var addButton  = ptor.findElements(by.buttonText('Add Item')); 
+		
+		var clotButton  = element(by.repeater('product in products').row(0));
+		var addButton = clotButton.element(by.buttonText('Add Item'));
+		var chartButton  = element(by.repeater('cloth in sharedCart').row(0));
+		var removeButton = chartButton.element(by.buttonText('Remove Item')); 
 
 		it('I can view the products and their category, price and their stock', function() {
 			expect(allCloth.count()).to.eventually.eq(13);
@@ -71,6 +76,16 @@ describe('shopApp',function(){
 			addButton.click();
 			addButton.click();
 			expect(chart.count()).to.eventually.eq(2);
+		});
+
+		it('can remove an item form the shoppingChart', function() {
+			addButton.click();
+			expect(chart.count()).to.eventually.eq(1);
+			removeButton.click();
+			expect(chart.count()).to.eventually.eq(0);			
+
+			
+
 		});
 	});
 });

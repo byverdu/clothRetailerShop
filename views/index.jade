@@ -20,6 +20,7 @@ block content
 						h5(ng-bind='cloth.name') 
 						h6(ng-bind='cloth.category')
 						p(data-ng-bind='cloth.price | currency : "£ " : 2')
+						button(class="btn btn-xs btn-warning",ng-click='removeItem($index)') Remove Item
 					section.discounts
 
 
