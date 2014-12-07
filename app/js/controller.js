@@ -54,7 +54,25 @@ angular.module('shopControllers',[])
 		$scope.applyDisc = function(){
 			var total = $scope.totalPrice();
 
-			return (total-(($scope.thisDisc/100)*100));
+			return (total-(($scope.thisDisc/100)*total));
+		};
+
+		$scope.priceDisc = function(){
+			return $scope.applyDisc();
+		};
+
+		$scope.checkFootWear = function(){
+			var checker = false;
+			angular.forEach($scope.sharedCart,function(cloth){
+					var category = cloth.category.split(' ').pop();
+
+					if(category === 'Footwear'){
+
+						checker = true;
+					}
+			});
+
+			return checker;
 		};
 
 	}]);

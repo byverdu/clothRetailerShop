@@ -12,6 +12,13 @@ describe('CartCtrl', function() {
 			stock: 5
 		};
 
+		var fakeCloth2 = {
+			name: 'Gold Button Cardigan, Black',
+			category: 'Women’s Casualwear',
+			price: 167.00,
+			stock: 6
+		};
+
 		beforeEach(module('shopApp'));
 		
 		beforeEach(inject(function($rootScope,$controller,ClothService){
@@ -65,6 +72,7 @@ describe('CartCtrl', function() {
 			expect(scope.thisDisc).to.eq(5);
 		});
 
+
 		it('the price is reduced by 5% with the normalDisc', function() {
 			scope.sharedCart.push(fakeCloth);
 			var price = (scope.sharedCart[0].price);
@@ -72,7 +80,21 @@ describe('CartCtrl', function() {
 
 			scope.applyDisc();
 
-			expect(scope.applyDisc()).to.eq(price-((disc/100)*100));
+			expect(scope.applyDisc()).to.eq(price-((disc/100)*price));
+		});
+
+		it('updates the price when a discount is applied', function() {
+				expect(scope.priceDisc()).to.eq(scope.applyDisc());	
+		});
+
+		it('to apply the bigger discount needs at least a footwear item', function() {
+			scope.sharedCart.push(fakeCloth);
+			expect(scope.checkFootWear()).to.be.true();
+		});
+
+		it('to apply the bigger discount needs at least a footwear item', function() {
+			scope.sharedCart.push(fakeCloth2);
+			expect(scope.checkFootWear()).to.be.false();
 		});
 	});
 
