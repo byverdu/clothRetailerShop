@@ -6,14 +6,20 @@ block content
 		.row
 			.col-lg-8.col-lg-offset-2(ng-controller='ClothCtrl')
 				h1.title Welcome to #{title}
-				section.allCloth(ng-repeat='product in products track by $index')
-					div.cloth
+				section.allCloth
+					div.cloth(ng-repeat='product in products track by $index')
 						h5(ng-bind='product.name') 
 						h6(ng-bind='product.category')
 						p(data-ng-bind='product.price | currency : "£ " : 2')
 						strong(ng-bind='product.stock')
-			.col-lg-8.col-lg-offset-2
-				section.chart
+						button(class='btn btn-xs btn-success',ng-click='addItem($index)') Add Item
+
+			.col-lg-8.col-lg-offset-2(ng-controller='CartCtrl')
+				section.shoppingChart
+					div(class="itemChart",ng-repeat='cloth in sharedCart track by $index')
+						h5(ng-bind='cloth.name') 
+						h6(ng-bind='cloth.category')
+						p(data-ng-bind='cloth.price | currency : "£ " : 2')
 					section.discounts
 
 
