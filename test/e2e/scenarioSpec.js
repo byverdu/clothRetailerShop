@@ -47,7 +47,7 @@ describe('shopApp',function(){
 		var clothCat = element(by.repeater('product in products').row(0).column('product.category'));
 		var clothPrice = element(by.repeater('product in products').row(0).column('product.price'));
 		var clothStock = element(by.repeater('product in products').row(0).column('product.stock'));
-		var addButton  = element(by.buttonText('Add Item')); 
+		var addButton  = ptor.findElements(by.buttonText('Add Item')); 
 
 		it('I can view the products and their category, price and their stock', function() {
 			expect(allCloth.count()).to.eventually.eq(13);
