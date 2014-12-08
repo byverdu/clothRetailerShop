@@ -35,6 +35,13 @@ describe('ClothCtrl', function() {
 		scope.addItem(0);
 		expect(scope.sharedCart).to.have.length(1);
 	});
+
+	it('knows how much stock is left', function() {
+		scope.addItem(0);
+		scope.sharedCart[0].stock = 0;
+		expect(scope).to.respondTo('checkStock');
+		expect(scope.checkStock(0)).to.be.true;
+	});
 });
 
 

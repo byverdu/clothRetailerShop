@@ -14,7 +14,7 @@ block content
 							h6(ng-bind='product.category')
 							p(data-ng-bind='product.price | currency : "£ " : 2')
 							p Stock left #[strong(ng-bind='product.stock')]
-							button(class='btn btn-xs btn-success',ng-click='addItem($index)') Add Item
+							button(class='btn btn-xs btn-success',ng-click='addItem($index)',ng-disabled='checkStock($index)') Add Item
 		
 			.col-md-2.col-sm-3.col-xs-3(ng-controller='CartCtrl')
 				section.shoppingChart
