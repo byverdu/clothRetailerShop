@@ -45,6 +45,7 @@ angular.module('shopControllers',[])
 		};
 
 		$scope.removeItem = function($index){
+			ClothService.sharedCart[$index].stock += 1;
 			ClothService.sharedCart.splice($index,1);
 		};
 
