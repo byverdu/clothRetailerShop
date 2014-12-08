@@ -7,7 +7,8 @@ describe('ClothService', function() {
 		name: 'Almond Toe Court Shoes, Patent Black',
 		category: 'Women’s Footwear',
 		price: 99.00,
-		stock: 5
+		stock: 5,
+		image:'/img/img0.jpg'
 	};
 	
 	var service;
@@ -45,6 +46,10 @@ describe('ClothService', function() {
 
 	it('and each cloth has a property stock', function() {
 		expect(service.cloth[0]).to.have.property('stock').to.eq(5);
+	});
+
+	it('and each cloth has a property image', function() {
+		expect(service.cloth[0]).to.have.property('image').to.eq('/img/img0.jpg');
 	});
 
 	it('should have a property that contains the selected products', function() {

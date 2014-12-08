@@ -10,6 +10,7 @@ block content
 					section.allCloth
 						div.col-md-4.col-sm-6.col-xs-12(ng-repeat='product in products track by $index')
 							h5(ng-bind='product.name') 
+							img(src="{{product.image}}", alt="{{product.name}}",class="img-thumbnail")
 							h6(ng-bind='product.category')
 							p(data-ng-bind='product.price | currency : "£ " : 2')
 							strong(ng-bind='product.stock')
