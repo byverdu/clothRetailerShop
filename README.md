@@ -100,7 +100,9 @@ The app is based in AngularJs. The data that the app is using comes from a Servi
 There is 3 main controllers:
 
 ClothCtrl   -> responsible to add items and control the stock.
+
 CartCtrl    -> responsible to remove items, the total price and the discounts.
+
 TooltipCtrl -> responsible to show tooltips for the discounts values.
 
 
