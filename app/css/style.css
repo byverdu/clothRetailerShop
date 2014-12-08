@@ -1,13 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: url(../img/back.png); }
+
+h1 {
+  font-family: 'Indie Flower', cursive !important;
+  font-size: 50px !important;
+  color: RGBA(194, 46, 79, 1) !important; }
 
 a {
   color: #00B7FF; }
 
 strong {
   color: #FA4D24; }
+
+.allCloth img {
+  width: 200px;
+  height: 200px; }
 
 .shoppingChart {
   box-shadow: 0 0 1px;
@@ -31,3 +41,12 @@ strong {
   .shoppingChart .itemChart {
     border-bottom: 2px solid;
     padding-bottom: 10px; }
+
+@media screen and (max-width: 750px) {
+  .allCloth img {
+    width: 50%;
+    height: auto; }
+  .allCloth .floatAtMedium {
+    float: right;
+    display: block; }
+ }

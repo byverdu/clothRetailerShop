@@ -21,7 +21,7 @@ describe('shopApp',function(){
 		});
 
 		it('should have a welcome message', function() {
-			expect(element(by.css('.title')).getText()).to.eventually.eq('Welcome to ByverduShop');
+			expect(element(by.css('.title')).getText()).to.eventually.eq('ByverduShop');
 		});
 
 		it('should have a section to display the cloth', function() {
