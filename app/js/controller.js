@@ -3,6 +3,12 @@
 'use strict';
 
 angular.module('shopControllers',[])
+
+	.controller('TooltipCtrl',['$scope',function($scope){
+			$scope.normalTooltip  = 'Any order has';
+			$scope.fiftyTooltip   = 'Spending 50 quid has';
+			$scope.seventyTooltip = 'Spending 75 quid and a Footwear item';
+	}])
 	
 	.controller('ClothCtrl',['$scope','ClothService',function($scope,ClothService){
 
@@ -26,8 +32,8 @@ angular.module('shopControllers',[])
 		$scope.thisDisc     = null;
 		$scope.isDisplayed  = false;
 		$scope.isDiscounted = false;
-		$scope.fiftyDisc    = true;
-		$scope.seventyDisc  = true;
+		$scope.fiftyButton  = true;
+		$scope.seventyButton= true;
 		$scope.discounts    = {
 
 			normalDisc: 5,
@@ -55,15 +61,15 @@ angular.module('shopControllers',[])
 			}
 
 			if (price > 50) {
-				$scope.fiftyDisc = false;
+				$scope.fiftyButton = false;
 			} else{
-				$scope.fiftyDisc = true;
+				$scope.fiftyButton = true;
 			}
 
 			if(price > 75 && $scope.checkFootWear()){
-				$scope.seventyDisc  = false;
+				$scope.seventyButton  = false;
 			} else{
-				$scope.seventyDisc  = true;
+				$scope.seventyButton  = true;
 			}
 
 			return price;

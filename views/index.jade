@@ -9,11 +9,11 @@ block content
 				.row
 					section.allCloth
 						div.col-md-4.col-sm-6.col-xs-12(ng-repeat='product in products track by $index')
-							h5(ng-bind='product.name') 
+							h6(ng-bind='product.name') 
 							img(src="{{product.image}}", alt="{{product.name}}",class="img-thumbnail")
 							h6(ng-bind='product.category')
 							p(data-ng-bind='product.price | currency : "£ " : 2')
-							strong(ng-bind='product.stock')
+							p Stock left #[strong(ng-bind='product.stock')]
 							button(class='btn btn-xs btn-success',ng-click='addItem($index)') Add Item
 		
 			.col-md-2.col-sm-3.col-xs-3(ng-controller='CartCtrl')
@@ -22,12 +22,16 @@ block content
 
 					h2.priceDisc(ng-show='isDiscounted') Price with discounts #[strong(ng-bind='priceDisc() | currency : "£ " : 2') ] 
 					
-					section.discounts(ng-show='isDisplayed')
-						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.normalDisc)" ) 5% off!   	
+					section.discounts(ng-show='isDisplayed',ng-controller='TooltipCtrl')
+
+						div(tooltip='{{normalTooltip}}',tooltip-placement='left')
+							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.normalDisc)") 5% off! 
 						
-						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.fiftyDisc)",ng-disabled='fiftyDisc') 10% off!  	
+						div(tooltip='{{fiftyTooltip}}',tooltip-placement='left')
+							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.fiftyDisc)",ng-disabled='fiftyButton') 10% off!
 						
-						button(class="btn btn-sm btn-info",ng-click="selectDisc(discounts.senventyFiveDisc)",ng-disabled='seventyDisc' ) 15% off!
+						div(tooltip='{{seventyTooltip}}',tooltip-placement='left')
+							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.senventyFiveDisc)",ng-disabled='seventyButton') 15% off!
 
 					div(class="itemChart",ng-repeat='cloth in sharedCart track by $index')
 						h5(ng-bind='cloth.name') 
