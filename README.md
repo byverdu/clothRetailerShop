@@ -73,7 +73,7 @@ retailShop
 		karma.conf.js      # karma configuration
 		protractor-conf.js # protractor configuration
 	views/							 # jade files, angular html tags
-
+```
 
 ### Technologies used
 
