@@ -4,3 +4,21 @@ body {
 
 a {
   color: #00B7FF; }
+
+strong {
+  color: #FA4D24; }
+
+.shoppingChart {
+  box-shadow: 0 0 1px;
+  padding-bottom: 20px;
+  border-radius: 15px; }
+  .shoppingChart h5, .shoppingChart .itemChart {
+    text-align: center;
+    margin: 10px 0;
+    padding-top: 10px; }
+  .shoppingChart .discounts {
+    padding: 20%;
+    border-bottom: 1px solid;
+    border-top: 1px solid; }
+    .shoppingChart .discounts button {
+      margin-bottom: 10px; }

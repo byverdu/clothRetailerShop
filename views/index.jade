@@ -16,7 +16,7 @@ block content
 							p Stock left #[strong(ng-bind='product.stock')]
 							button(class='btn btn-xs btn-success',ng-click='addItem($index)',ng-disabled='checkStock($index)') Add Item
 		
-			.col-md-2.col-sm-3.col-xs-3(ng-controller='CartCtrl')
+			.col-md-2.col-sm-3.col-xs-8(ng-controller='CartCtrl')
 				section.shoppingChart
 					h5.totalPrice Price order #[strong(ng-bind='totalPrice() | currency : "£ " : 2')]
 
