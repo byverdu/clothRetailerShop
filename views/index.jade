@@ -18,9 +18,9 @@ block content
 		
 			.col-md-2.col-sm-3.col-xs-3(ng-controller='CartCtrl')
 				section.shoppingChart
-					h2.totalPrice(ng-bind='totalPrice() | currency : "£ " : 2')
+					h5.totalPrice Price order #[strong(ng-bind='totalPrice() | currency : "£ " : 2')]
 
-					h2.priceDisc(ng-show='isDiscounted') Price with discounts #[strong(ng-bind='priceDisc() | currency : "£ " : 2') ] 
+					h5.priceDisc(ng-show='isDiscounted') Price with discounts #[strong(ng-bind='priceDisc() | currency : "£ " : 2') ] 
 					
 					section.discounts(ng-show='isDisplayed',ng-controller='TooltipCtrl')
 
