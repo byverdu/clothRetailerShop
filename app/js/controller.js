@@ -27,9 +27,6 @@ angular.module('shopControllers',[])
 		$scope.checkStock = function($index){
 			return $scope.products[$index].stock === 0 ? true : false ;
 		};
-
-
-
 	}])
 
 	.controller('CartCtrl',['$scope','ClothService',function($scope,ClothService){
