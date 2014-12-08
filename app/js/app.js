@@ -1,7 +1,7 @@
 /*global angular*/
 'use strict';
 
-angular.module('shopApp',[
+var shopApp = angular.module('shopApp',[
 
 	'shopServices',
 	'shopControllers',

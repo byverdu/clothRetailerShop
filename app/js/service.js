@@ -1,8 +1,9 @@
 /*global angular*/
 'use strict';
 
-angular.module('shopServices',[])
-	.factory('ClothService',function(){
+var shopServices = angular.module('shopServices',[]);
+	
+	shopServices.factory('ClothService',function(){
 			return {
 
 				sharedCart: [],	
