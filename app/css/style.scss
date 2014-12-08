@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: url(../img/back.png);
 }
 
 a {
@@ -16,21 +17,32 @@ strong{
 	box-shadow: 0 0 1px;
 	padding-bottom: 20px;
 	border-radius: 15px;
+	background: RGB(199, 208, 209);
+	background: RGBA(199, 208, 209, 0.5);
 
 	h5,
 	.itemChart{
 		text-align: center;
 		margin: 10px 0;
 		padding-top: 10px;
+
 	}
 	
 	.discounts{
-		padding: 20%;
+		padding: 10px 0;
 		border-bottom: 1px solid;
 		border-top: 1px solid;
+		text-align: center;
+		background-color: RGB(245, 247, 236);
+		background: RGBA(245, 247, 236, 1);
 
 		button{
 			margin-bottom: 10px
 		}
+	}
+
+	.itemChart{
+		border-bottom: 2px solid;
+		padding-bottom: 10px;
 	}
 }

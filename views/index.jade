@@ -25,13 +25,13 @@ block content
 					section.discounts(ng-show='isDisplayed',ng-controller='TooltipCtrl')
 
 						div(tooltip='{{normalTooltip}}',tooltip-placement='left')
-							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.normalDisc)") 5% off! 
+							button(class="btn btn-danger",ng-click="selectDisc(discounts.normalDisc)") 5% off! 
 						
 						div(tooltip='{{fiftyTooltip}}',tooltip-placement='left')
-							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.fiftyDisc)",ng-disabled='fiftyButton') 10% off!
+							button(class="btn btn-danger",ng-click="selectDisc(discounts.fiftyDisc)",ng-disabled='fiftyButton') 10% off!
 						
 						div(tooltip='{{seventyTooltip}}',tooltip-placement='left')
-							button(class="btn btn-lg btn-info",ng-click="selectDisc(discounts.senventyFiveDisc)",ng-disabled='seventyButton') 15% off!
+							button(class="btn btn-danger",ng-click="selectDisc(discounts.senventyFiveDisc)",ng-disabled='seventyButton') 15% off!
 
 					div(class="itemChart",ng-repeat='cloth in sharedCart track by $index')
 						h5(ng-bind='cloth.name') 
