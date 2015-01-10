@@ -40,7 +40,7 @@ describe('ClothCtrl', function() {
 		scope.addItem(0);
 		scope.sharedCart[0].stock = 0;
 		expect(scope).to.respondTo('checkStock');
-		expect(scope.checkStock(0)).to.be.true;
+		expect(scope.checkStock(0)).to.be.true();
 	});
 });
 

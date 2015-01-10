@@ -37,7 +37,7 @@ describe('User Stories', function() {
 	});
 
 	it('I can add a product to the shopping cart', function() {
-		expect(addButton.isPresent()).to.eventually.be.true;
+		expect(addButton.isPresent()).to.eventually.be.true();
 		addButton.click();
 		expect(chart.count()).to.eventually.eq(1);
 	});
@@ -63,9 +63,9 @@ describe('User Stories', function() {
 	it('I can a apply a voucher to my shoppingChart', function() {
 		var discounts = element(by.css('section.discounts'));
 		
-		expect(discounts.isDisplayed()).to.eventually.be.false;
+		expect(discounts.isDisplayed()).to.eventually.be.false();
 		addButton.click();
-		expect(discounts.isDisplayed()).to.eventually.be.true;
+		expect(discounts.isDisplayed()).to.eventually.be.true();
 	});
 
 	it('I can see 5% off the price with the normal discount', function() {

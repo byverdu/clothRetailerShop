@@ -81,7 +81,7 @@ var CartCtrl = function(scope,ClothService){
 			scope.isDiscounted = true;
 			scope.thisDisc = discount;
 
-			return scope.thisDisc
+			return scope.thisDisc;
 		};
 		scope.applyDisc = function(){
 			var total = scope.totalPrice();

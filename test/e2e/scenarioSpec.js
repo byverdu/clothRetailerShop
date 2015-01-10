@@ -17,7 +17,7 @@ describe('shopApp',function(){
 		});
 
 		it('should be a responsive website', function() {
-			expect(element(by.css('.container-fluid')).isPresent()).to.eventually.be.true;
+			expect(element(by.css('.container-fluid')).isPresent()).to.eventually.be.true();
 		});
 
 		it('should have a welcome message', function() {
@@ -25,16 +25,16 @@ describe('shopApp',function(){
 		});
 
 		it('should have a section to display the cloth', function() {
-			expect(element(by.css('section.allCloth')).isPresent()).to.eventually.be.true;
+			expect(element(by.css('section.allCloth')).isPresent()).to.eventually.be.true();
 		});
 
 		it('should have a section to display the chart', function() {
-			expect(element(by.css('section.shoppingChart')).isPresent()).to.eventually.be.true;
+			expect(element(by.css('section.shoppingChart')).isPresent()).to.eventually.be.true();
 
 		});
 
 		it('should have a section to display the discounts', function() {
-			expect(element(by.css('section.discounts')).isPresent()).to.eventually.be.true;
+			expect(element(by.css('section.discounts')).isPresent()).to.eventually.be.true();
 		});
 	});
 
